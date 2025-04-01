@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta title="Un-Etai, L'association humanitaire des Étudiants en Médecine de Toulouse.">
+    <meta charset="UTF-8">
+    <title>UN ETAI - R'Un Etai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="shortcut icon" href="./assets/logos/unetai.png" type="image/x-icon">
+</head>
+<body class="bg-gray-100 font-montserrat">
+
+    <!-- Navbar -->
+    <header id="menu" class="bg-white shadow sticky z-50 top-0">
+        <div class="flex flex-wrap justify-between items-center px-4 md:px-8 py-4 mx-auto">
+            <div class="max-w-screen-xl flex justify-between items-center gap-8 text-left">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="./assets/logos/unetai.png" alt="Un Etai Logo" class="h-20">
+                </a>
+                <!-- Menu normal pour grand écran -->
+                <nav class="hidden lg:flex items-center space-x-8 text-lg">
+                    <a href="index.html" class="text-gray-700 hover:text-customGreen">Accueil</a>
+                    <a href="runetai.html" class="text-gray-700 hover:text-customGreen">R'Un Etai</a>
+                    <a href="missions.html" class="text-gray-700 hover:text-customGreen">Nos Missions</a>
+                    <a href="boutique.html" class="text-gray-700 hover:text-customGreen">Boutique</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-customGreen">Contact</a>
+                </nav>
+            </div>
+
+            <div class="flex lg:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center flex-wrap">
+                <a href="https://www.helloasso.com/associations/un-etai/formulaires/6" target="_blank" class="bg-customGreen text-white font-bold text-base px-6 py-3 mx-5 rounded-full shadow-lg transition duration-300 transform hover:scale-110 text-center">Faire un don</a>
+                <!-- Menu Hamburger -->
+                <button id="hamburger-icon" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-100 transition duration-300" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu mobile (affiché lors du clic sur le hamburger) -->
+        <div class="lg:hidden" id="navbar-sticky" style="display: none;">
+            <nav class="flex flex-col items-center space-y-4 text-lg p-4 bg-white">
+                <a href="index.html" class="text-gray-700 hover:text-customGreen">Accueil</a>
+                <a href="runetai.html" class="text-gray-700 hover:text-customGreen">R'Un Etai</a>
+                <a href="missions.html" class="text-gray-700 hover:text-customGreen">Nos Missions</a>
+                <a href="boutique.html" class="text-gray-700 hover:text-customGreen">Boutique</a>
+                <a href="contact.html" class="text-gray-700 hover:text-customGreen">Contact</a>
+            </nav>
+        </div>
+
+        <script>
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const navbarMenu = document.getElementById('navbar-sticky');
+        
+            hamburgerIcon.addEventListener('click', () => {
+                if (navbarMenu.style.display === 'none' || navbarMenu.style.display === '') {
+                    navbarMenu.style.display = 'block';
+                    hamburgerIcon.classList.add('bg-gray-100');
+                } else {
+                    navbarMenu.style.display = 'none';
+                    hamburgerIcon.classList.remove('bg-gray-100');
+                }
+            });
+        </script>
+    </header>
+
+
+
+    <!-- Run Etai -->
+    <section id="runetai" class="relative bg-cover bg-center text-white section-fullscreen flex flex-col items-center justify-center text-center py-16" style="background-image: url('./assets/runetai/img_fond.jpg');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-[rgba(54,54,54,0.4)]"></div>
+
+        <div class="container mx-auto px-5 relative z-10">
+            <!-- Logo -->
+            <div class="flex justify-center">
+                <img src="./assets/logos/runetai.png" alt="Un Etai Logo" class="h-48 md:h-60 rounded-full bg-[rgba(255,255,255,0.8)]">
+            </div>
+
+            <!-- Date de la course -->
+            <div class="my-12 text-center flex flex-col rounded-lg justify-center gap-4">
+                <h2 class="text-5xl font-bold text-white">Samedi 7 juin 2025</h2>
+                <p class="italic font-normal text-white text-xl">Participez à notre course solidaire pour soutenir nos missions humanitaires à travers le monde !</p>
+            </div>
+        </div>
+        <!-- Bouton S'inscrire -->
+        <a href="#courses" class="bg-orange-400 text-white font-semibold uppercase text-xl px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:scale-110"
+        onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('courses').offsetTop - (document.getElementById('menu') ? document.getElementById('menu').offsetHeight : 0), behavior: 'smooth' });">
+            S'inscrire</a>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuHeight = document.getElementById('menu').offsetHeight;
+            const section = document.getElementById('runetai');
+            section.style.minHeight = `calc(100dvh - 1.5*${menuHeight}px)`;
+        });
+    
+        window.addEventListener('resize', function() {
+            const menuHeight = document.getElementById('menu').offsetHeight;
+            const section = document.getElementById('runetai');
+            section.style.minHeight = `calc(100dvh - 1.5*${menuHeight}px)`;
+        });
+    </script>
+
+
+
+    <!-- Détails de la course et Objectifs -->
+    <section id="details-objectifs" class="bg-white text-white py-16">
+        <div class="container mx-auto flex flex-col md:flex-row  justify-center gap-8 md:gap-16 text-gray-700 px-8 w-full md:w-4/5">
+            <!-- Détails de la course -->
+            <div class="mb-12 md:mb-0 text-center  items-center flex flex-col w-full md:w-1/2 h-full">
+                <h3 class="text-3xl font-bold text-center mb-12 w-full">Détails de la course</h3>
+                <ul class="space-y-6 text-left flex flex-col justify-start h-full">
+                    <li class="flex flex-col lg:flex-row text-center items-center lg:text-left lg:items-start">
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <i class="fas fa-calendar-day w-6 md:mr-3"></i>
+                            <p class="font-bold text-nowrap">Date : &nbsp;</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-start">
+                            <p>Samedi 7 juin 2025</p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col lg:flex-row text-center items-center lg:text-left lg:items-start">
+                        <div class="flex flex-row items-center mb-2 lg:mb-0">
+                            <i class="fas fa-map-marker-alt w-6 lg:mr-3"></i>
+                            <p class="font-bold text-nowrap">Lieu : &nbsp;</p>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-start">
+                            <p>Base de loisirs des Argoulets, Toulouse</p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col lg:flex-row text-center items-center lg:text-left lg:items-start">
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <i class="fas fa-clock w-6 md:mr-3"></i>
+                            <p class="font-bold text-nowrap">Heures : &nbsp;</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-start">
+                            <p>8h (10km) / 9h (5km)</p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col lg:flex-row text-center items-center lg:text-left lg:items-start">
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <i class="fas fa-route w-6 md:mr-3"></i>
+                            <p class="font-bold text-nowrap">Parcours : &nbsp;</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-start">
+                            <p>10km (expérimentés) et 5km (tous niveaux)</p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col lg:flex-row text-center items-center lg:text-left lg:items-start">
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <i class="fas fa-euro-sign w-6 md:mr-3"></i>
+                            <p class="font-bold text-nowrap">Prix : &nbsp;</p>
+                        </div>
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <p class="font-bold text-nowrap">Étudiants :&nbsp;</p> <p>16€ (10km) / 12€ (5km)</p> 
+                        </div>
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <p class="font-bold text-nowrap">Non étudiants :&nbsp;</p> <p>21€ (10km) / 17€ (5km) </p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col lg:flex-row text-center items-center lg:text-left lg:items-start">
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <i class="fas fa-tshirt w-6 md:mr-3"></i>
+                            <p class="font-bold text-nowrap">Starter pack : &nbsp;</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-start">
+                            <p>Éco cup, T-shirt, Stickers...</p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col lg:flex-row text-center items-center lg:text-left lg:items-start">
+                        <div class="flex flex-row items-center mb-2 md:mb-0">
+                            <i class="fas fa-home w-6 md:mr-3"></i>
+                            <p class="font-bold text-nowrap">Villages : &nbsp;</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-start">
+                            <p>Stand de Kinésithérapie, Stand de Photo, Vélo Smoothie</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Objectifs -->
+            <div class="text-center flex flex-col items-center w-full md:w-1/2 h-full">
+                <h3 class="text-3xl font-bold text-center mb-12 w-full">Objectifs de la course</h3>
+                <ul class="space-y-6 text-center md:text-left flex flex-col justify-start h-full">
+                    <li class="flex items-center">
+                        <i class="fas fa-donate w-6 mr-3"></i>
+                        Récolter des fonds pour financer nos missions à l'étranger
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-heart w-6 mr-3"></i>
+                        Promouvoir l'activité et la santé physique
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-users w-6 mr-3"></i>
+                        Devenir un événement de rassemblement et promouvoir les valeurs humanitaires
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-bullhorn w-6 mr-3"></i>
+                        Sensibiliser le public aux enjeux humanitaires et à l'impact de nos missions à l'étranger
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Courses 5K et 10K -->
+    <section id="courses" class="bg-customGreen text-white py-16">
+        <div class="container mx-auto text-center px-8 w-full md:w-4/5">
+            <h3 class="text-3xl font-bold text-center mb-12 mx-auto">Parcours et Inscriptions</h3>
+            <div class="flex flex-wrap flex-col md:flex-row justify-center gap-16">
+                <!-- Course 5K -->
+                <div class="w-full md:w-2/5 bg-gray-100 rounded-lg shadow-lg p-5">
+                    <a href="https://www.openrunner.com/route-details/18510376" target="_blank">
+                        <img src="./assets/runetai/5k.png" alt="Parcours 5K" class="rounded-lg mb-4 border-2 border-customGreen">
+                    </a>
+                    <h4 class="text-xl font-bold mb-2 text-gray-700">Course 5K</h4>
+                    <p class="text-gray-700">Parcours accessible à tous (en famille, débutants...).</p>
+                    <a href="https://www.helloasso.com/associations/un-etai/evenements/r-un-etai-2025" class="bg-customGreen text-white px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-110 mt-4 inline-block">S'inscrire</a>
+                </div>
+
+                <!-- Course 10K -->
+                <div class="w-full md:w-2/5 bg-gray-100 rounded-lg shadow-lg p-5">
+                    <a href="https://www.openrunner.com/route-details/18510413" target="_blank">
+                        <img src="./assets/runetai/10k.png" alt="Parcours 10K" class="rounded-lg mb-4 border-2 border-customGreen">
+                    </a>
+                    <h4 class="text-xl font-bold mb-2 text-gray-700">Course 10K</h4>
+                    <p class="text-gray-700">Parcours pour les coureurs expérimentés.</p>
+                    <a href="https://www.helloasso.com/associations/un-etai/evenements/r-un-etai-2025" class="bg-customGreen text-white px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-110 mt-4 inline-block">S'inscrire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Informations pratiques -->
+    <section id="concept-info" class="bg-white text-gray-700 py-16 flex justify-center">
+        <div class="container mx-auto px-8 w-full md:w-4/5">
+            <h3 class="text-3xl font-bold text-center mb-12 mx-auto">Informations Pratiques</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+                <div>
+                    <i class="fa-solid fa-person-running text-customGreen text-3xl mb-4"></i>
+                    <p>Un <span class="font-bold text-customGreen">échauffement</span> de 15 minutes aura lieu avant chaque épreuve.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-users text-customGreen text-3xl mb-4"></i>
+                    <p>Il est possible de s’inscrire par <span class="font-bold text-customGreen">équipe</span> pour un classement par équipe.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-clipboard text-customGreen text-3xl mb-4"></i>
+                    <p>Les <span class="font-bold text-customGreen">dossards</span> peuvent être retirés sur place jusqu’à 30 minutes avant chaque épreuve.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-lock text-customGreen text-3xl mb-4"></i>
+                    <p>Des <span class="font-bold text-customGreen">consignes</span> seront disponibles pour déposer vos affaires en toute sécurité.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-hashtag text-customGreen text-3xl mb-4"></i>
+                    <p>C'est la deuxième édition, avec plus de <span class="font-bold text-customGreen">200 participants</span> l’an dernier et trois missions financées grâce aux fonds collectés.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-comments text-customGreen text-3xl mb-4"></i>
+                    <p>Un <span class="font-bold text-customGreen">forum</span> humanitaire accueillera de nombreuses associations étudiantes humanitaires.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-apple-whole text-customGreen text-3xl mb-4"></i>
+                    <p>Un <span class="font-bold text-customGreen">ravitaillement</span> sera disponible à l’arrivée, ainsi qu'une scène et de l’espace pour les spectateurs.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-camera text-customGreen text-3xl mb-4"></i>
+                    <p>Un <span class="font-bold text-customGreen">photographe</span> sera présent pour couvrir l’événement, avec des photos disponibles gratuitement après la course.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Bandeau séparateur avec image -->
+    <section id="bandeau" class="w-full h-96 bg-cover bg-center" style="background-image: url('./assets/runetai/img_bandeau_run.jpg');"></section>
+
+
+
+    <!-- Partenaires -->
+    <section id="partenaires" class="bg-white text-gray-700 py-16 flex justify-center">
+        <div class="container px-8 w-full md:w-4/5">
+            <h2 class="text-3xl font-bold text-center mb-12 mx-auto">Nos Partenaires</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 md:gap-8">
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/cerballiance.png" alt="Partenaire Cerballiance" class="h-full w-auto object-contain">
+                </div>
+
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/cours-esquirol.png" alt="Partenaire Cours Esquirol" class="h-full w-auto object-contain">
+                </div>
+
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/toulouse_metropole.png" alt="Partenaire Toulouse Métropole" class="h-full w-auto object-contain">
+                </div>
+
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/ville-balma.png" alt="Partenaire Ville de Balma" class="h-full w-auto object-contain">
+                </div>
+
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/intersport.png" alt="Partenaire Intersport" class="h-full w-auto object-contain">
+                </div>
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/cvec.png" alt="Partenaire Intersport" class="h-full w-auto object-contain">
+                </div>
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/crous.png" alt="Partenaire Intersport" class="h-full w-auto object-contain">
+                </div>
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/Logo_République_Française.png" alt="Partenaire Intersport" class="h-full w-auto object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Ils parlent de nous -->
+    <section id="presse" class="bg-gray-50 text-gray-700 py-16">
+        <div class="container mx-auto text-center px-8 w-full md:w-4/5">
+            <h3 class="text-3xl font-bold text-center mb-12 mx-auto">Ils parlent de nous</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Bloc 1 -->
+                <div class="bg-white text-gray-700 rounded-lg shadow-lg p-5 flex flex-col items-center hover:shadow-xl h-full">
+                    <div class="flex items-center justify-center pb-8">
+                        <img src="./assets/logos/lopinion.png" alt="Logo L'Opinion" class="h-12">
+                    </div>
+                    <div class="flex-grow flex items-center justify-center text-justify">
+                        <p class="text-sm italic">"Une course caritative portée par des étudiants toulousains en 3e année de médecine. L’objectif ? Collecter des fonds afin de soutenir des organismes humanitaires localisés en Asie et en Afrique."</p>
+                    </div>
+                    <a href="https://lopinion.com/articles/actualite/23787_toulouse-etudiants-medecine-organisent-course-caritative" target="_blank" class="text-gray-700 px-4 py-2 rounded-full underline transition duration-300 transform hover:scale-110 mt-4">
+                        Lire l'article
+                    </a>
+                </div>
+
+                <!-- Bloc 2 -->
+                <div class="bg-white text-gray-700 rounded-lg shadow-lg p-5 flex flex-col items-center hover:shadow-xl h-full">
+                    <div class="flex items-center justify-center pb-8">
+                        <img src="./assets/logos/ladepeche.png" alt="Logo La Dépêche" class="h-12">
+                    </div>
+                    <div class="flex-grow flex items-center justify-center text-justify">
+                        <p class="text-sm italic">"Pour cette première édition, l’association toulousaine espère atteindre près de 500 participants. Les dons récoltés grâce à la vente des dossards seront reversés auprès d’associations laotiennes, sénégalaises et cambodgiennes."</p>
+                    </div>
+                    <a href="https://www.ladepeche.fr/2024/06/24/des-etudiants-en-medecine-toulousains-organisent-une-course-caritative-pour-des-missions-humanitaires-12021871.php" target="_blank" class="text-gray-700 px-4 py-2 rounded-full underline transition duration-300 transform hover:scale-110 mt-4">
+                        Lire l'article
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Remerciements -->
+    <section id="remerciements" class="relative bg-cover bg-center text-white  h-96 flex flex-col items-center justify-center text-center" style="background-image: url('./assets/runetai/remerciements.jpg');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-[rgba(31,41,55,0.3)] z-10"></div>
+
+        <div class="container mx-auto px-5 relative z-20 flex flex-col justify-center items-center gap-4">
+
+            <div class="my-12 text-center flex flex-col rounded-lg justify-center">
+                <h2 class="text-5xl font-bold text-white">Un grand merci !</h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 md:gap-16 md:w-1/3 justify-center md:mt-8">
+                <a href="https://drive.google.com/drive/folders/1-8Fa_DCbO80zS4hPFc2QQ24IbCc9xosk" target="_blank" 
+                   class="bg-customGreen text-white font-semibold uppercase text-base rounded-full shadow-lg transition duration-300 transform hover:scale-110 px-6 py-3 text-center flex-1">
+                   PHOTOS<br>2024
+                </a>
+                <a 
+                   class="bg-customGreen text-white font-semibold uppercase text-base rounded-full shadow-lg transition duration-300 transform hover:scale-110 px-6 py-3 text-center flex-1">
+                   CLASSEMENT 2024
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+
+    
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="mx-auto w-full p-16 py-16">
+            <div class="flex flex-col xl:flex-row xl:gap-96 justify-center mx-auto items-center gap-16">
+                <!-- Logo, Nom et Description -->
+                <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-8">
+                    <img src="./assets/logos/unetai.png" alt="Logo Un'Etai" class="h-20">
+                    <div class="flex text-center flex-col flex-wrap md:text-left">
+                        <span class="text-2xl font-semibold text-gray-700">Un'Etai</span>
+                        <p class="mt-2 text-sm text-gray-500 max-w-64">Agissons ensemble pour une médecine plus humaine.</p>
+                    </div>
+                </div>
+    
+                <!-- Liens Utiles et Moyens de Contact -->
+                <div class="flex flex-col md:flex-row justify-center text-center md:text-left gap-8 md:gap-32">
+                    <!-- Liens Utiles -->
+                    <div class="w-full">
+                        <h2 class="mb-6 text-sm font-semibold text-gray-700 uppercase">Liens Utiles</h2>
+                        <ul class="text-gray-500 font-medium">
+                            <li class="mb-4">
+                                <a href="runetai.html" class="hover:text-customGreen">R'un Etai</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="missions.html" class="hover:text-customGreen">Nos missions</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="contact.html" class="hover:text-customGreen">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Moyens de Contact -->
+                    <div class="w-full">
+                        <h2 class="mb-6 text-sm font-semibold text-gray-700 uppercase">Contactez-Nous</h2>
+                        <ul class="text-gray-500 font-medium flex flex-col items-center justify-center md:items-start">
+                            <li class="mb-4 flex items-center space-x-2 group">
+                                <i class="fas fa-envelope text-gray-500 group-hover:text-customGreen group-hover:cursor-pointer"></i>
+                                <a href="mailto:un.etai05@gmail.com" class="group-hover:text-customGreen">un.etai05@gmail.com</a>
+                            </li>
+                            <li class="mb-4 flex items-center space-x-2 group">
+                                <i class="fab fa-instagram text-gray-500 group-hover:text-customGreen group-hover:cursor-pointer"></i>
+                                <a href="https://www.instagram.com/1_etai/" target="_blank" class="group-hover:text-customGreen">@1_etai</a>
+                            </li>
+                            <li class="flex items-center space-x-2 group">
+                                <i class="fab fa-tiktok text-gray-500 group-hover:text-customGreen group-hover:cursor-pointer"></i>
+                                <a href="https://www.tiktok.com/@1.etai" target="_blank" class="group-hover:text-customGreen">@1.etai</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="text-center mt-12">
+                <span class="text-sm text-gray-500">&copy; 2025 Un'Etai. Tous droits réservés.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

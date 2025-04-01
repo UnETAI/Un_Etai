@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://un-etai.com/</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/runetai</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/missions</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/boutique</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/contact</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/assets/classement_2024</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/assets/index.html</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/assets/runetai.html</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/assets/missions.html</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/assets/boutique.html</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://un-etai.com/assets/contact.html</loc>
+  <lastmod>2025-03-03T15:47:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

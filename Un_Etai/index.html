@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta title="Un-Etai, L'association humanitaire des Étudiants en Médecine de Toulouse.">
+    <meta name="description" content="A Toulouse, des étudiants en 3ème année de médecine à l'Université Toulouse III - Paul Sabatier, prennent en main chaque année le bureau de l'association humanitaire avec comme objectif de récolter des fonds et de les réinvestir dans différentes missions à l'étranger pendant l'été. "> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN ETAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="shortcut icon" href="./assets/logos/unetai.png" type="image/x-icon">
+</head>
+<body class="bg-white font-montserrat">
+
+    <!-- Navbar -->
+    <header id="menu" class="bg-white shadow sticky z-50 top-0">
+        <div class="flex flex-wrap justify-between items-center px-4 md:px-8 py-4 mx-auto">
+            <div class="max-w-screen-xl flex justify-between items-center gap-8 text-left">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="./assets/logos/unetai.png" alt="Un Etai Logo" class="h-20">
+                </a>
+                <!-- Menu normal pour grand écran -->
+                <nav class="hidden lg:flex items-center space-x-8 text-lg">
+                    <a href="index.html" class="text-gray-700 hover:text-customGreen">Accueil</a>
+                    <a href="runetai.html" class="text-gray-700 hover:text-customGreen">R'Un Etai</a>
+                    <a href="missions.html" class="text-gray-700 hover:text-customGreen">Nos Missions</a>
+                    <a href="boutique.html" class="text-gray-700 hover:text-customGreen">Boutique</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-customGreen">Contact</a>
+                </nav>
+            </div>
+
+            <div class="flex lg:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center flex-wrap">
+                <a href="https://www.helloasso.com/associations/un-etai/formulaires/6" target="_blank" class="bg-customGreen text-white font-bold text-base px-6 py-3 mx-5 rounded-full shadow-lg transition duration-300 transform hover:scale-110 text-center">Faire un don</a>
+                <!-- Menu Hamburger -->
+                <button id="hamburger-icon" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-100 transition duration-300" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu mobile (affiché lors du clic sur le hamburger) -->
+        <div class="lg:hidden" id="navbar-sticky" style="display: none;">
+            <nav class="flex flex-col items-center space-y-4 text-lg p-4 bg-white">
+                <a href="index.html" class="text-gray-700 hover:text-customGreen">Accueil</a>
+                <a href="runetai.html" class="text-gray-700 hover:text-customGreen">R'Un Etai</a>
+                <a href="missions.html" class="text-gray-700 hover:text-customGreen">Nos Missions</a>
+                <a href="boutique.html" class="text-gray-700 hover:text-customGreen">Boutique</a>
+                <a href="contact.html" class="text-gray-700 hover:text-customGreen">Contact</a>
+            </nav>
+        </div>
+
+        <script>
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const navbarMenu = document.getElementById('navbar-sticky');
+        
+            hamburgerIcon.addEventListener('click', () => {
+                if (navbarMenu.style.display === 'none' || navbarMenu.style.display === '') {
+                    navbarMenu.style.display = 'block';
+                    hamburgerIcon.classList.add('bg-gray-100');
+                } else {
+                    navbarMenu.style.display = 'none';
+                    hamburgerIcon.classList.remove('bg-gray-100');
+                }
+            });
+        </script>
+    </header>
+
+
+
+
+
+    <!-- Découvrir -->
+
+    
+    <section id="decouvrir" class="bg-white text-gray-700 flex items-center justify-center py-16">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 px-8 w-full md:w-4/5">
+            <!-- Contenu à gauche -->
+            <div class="flex flex-col justify-start text-center lg:text-left w-full lg:w-1/2">
+                <h1 class="text-5xl font-bold mb-4 text-gray-700">Un Etai</h1>
+                <p class="text-xl mb-12 text-gray-500">L'association humanitaire des Étudiants en Médecine de Toulouse.</p>
+                <a href="#a-propos" 
+                    class="bg-customGreen text-lg text-white px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-110 mx-auto lg:mx-0 w-max" 
+                    onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('a-propos').offsetTop - (document.getElementById('menu') ? document.getElementById('menu').offsetHeight : 0), behavior: 'smooth' });">
+                    Découvrir
+                </a>
+            </div>
+            
+            <!-- Image à droite -->
+            <div class="text-center lg:text-right w-4/5 lg:w-1/2">
+                <img src="./assets/logos/unetai.png" class="max-h-96 w-full object-contain" alt="img">
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuHeight = document.getElementById('menu').offsetHeight;
+            const section = document.getElementById('decouvrir');
+            section.style.minHeight = `calc(100dvh - 1.5*${menuHeight}px)`;
+        });
+    
+        window.addEventListener('resize', function() {
+            const menuHeight = document.getElementById('menu').offsetHeight;
+            const section = document.getElementById('decouvrir');
+            section.style.minHeight = `calc(100dvh - 1.5*${menuHeight}px)`;
+        });
+    </script>
+
+
+    
+    <!-- Actualités -->
+    <section id="actualites" class= " bg-customGreen text-white py-16 flex justify-center">
+        <div class="container mx-auto px-8 w-full md:w-4/5">
+            <h2 class="text-3xl font-bold text-center mb-12 w-4/5 px-5 mx-auto">Actualités</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Vidéo YouTube -->
+                <div class="w-full lg:w-8/12 flex flex-col">
+                    <h3 class="text-2xl text-center font-semibold mb-4 uppercase">1ère EDITION COURSE R'UN ETAI</h3>
+                    <div class="relative w-full" style="padding-top: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/MFkTIu50eDA?showinfo=0" 
+                                class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="italic font-light mt-4 text-center"> Dimanche 30 juin 2024 - Base de loisir des Argoulets, Toulouse</p>
+                </div>
+
+                <!-- Texte des actualités -->
+                <div class="w-full lg:w-2/3 text-justify">
+                    <div class="italic font-regular">
+                        <p class="mb-4">
+                            Entre fanfare, encouragements et bonne humeur, cette <span class="font-semibold">première édition</span> s’est déroulée à merveille avec <span class="font-semibold">220 participants</span> pour nos circuits de 5 ou 10kms !
+                        </p>
+                        <p class="mb-4">
+                            Ce choix de venir, ce dimanche matin, participer à la première édition de R’Un Etai est remplie de sens et nous touche sincèrement, nous et nos associations partenaires au Cambodge, au Laos et au Sénégal où <span class="font-semibold">tous les fonds récoltés seront reversés pour agir à travers nos missions !</span> 
+                        </p>
+                        <p class="mb-4">
+                            Alors un <span class="font-semibold">grand merci</span> à tous nos coureurs, à nos bénévoles, à nos partenaires de la Mairie de Toulouse, le Crous ou encore la CVEC, et bien sûr à notre bureau d’étudiants de cette année sans qui l’évènement n’aurait pas pu voir le jour !
+                        </p>
+                        <p>
+                            R’Un Etai clôture en beauté les événements de l’année 2023-2024, <span class="font-semibold">on espère vous y voir l’année prochaine !</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- A propos -->
+    <section id="a-propos" class="bg-white text-gray-700 py-16 flex items-center flex-col justify-center">
+        <h2 class="text-3xl font-bold mb-12 text-center w-4/5 px-5 mx-auto">À propos</h2>
+        <div class="container flex flex-wrap flex-col lg:flex-row justify-center gap-16 px-8 w-full md:w-4/5">
+            <!-- Bloc Image -->
+            <div class="max-w-96 m-auto">
+                <img src="./assets/apropos.png" alt="apropos" class="my-auto mx-auto">
+            </div>
+            <div>
+               <img src="./assets/img_header/Bureau_membre.png" >
+             </div>
+            
+            <!-- Bloc Texte -->
+            <div class="w-full text-lg xl:w-1/3 lg:w-2/3 flex-grow text-justify">
+                <p class="">
+                    Depuis 2005, des étudiants en 3ème année de médecine prennent en main chaque année le bureau de 
+                    l'association avec comme objectif de <span class="font-bold">récolter des fonds</span> et de les 
+                    <span class="font-bold">réinvestir dans différentes missions à l'étranger</span> pendant l'été.
+                </p>
+                <p class="mt-4">
+                    Ces missions ont un enjeu commun : celui de <span class="font-bold">venir en aide aux populations défavorisées</span> dans des villages reculés d'Afrique et d'Asie. 
+                    Nous menons des actions de construction, de réfection, de prévention sanitaire, d'assistance médicale ou encore d'aides scolaires aux enfants.
+                </p>
+                <p class="mt-4">
+                    Nous collaborons avec des associations locales qui nous aident à déterminer les besoins des populations et organiser l'ensemble de nos missions au 
+                    <span class="font-bold">Sénégal</span>, au <span class="font-bold">Laos</span> et au <span class="font-bold">Cambodge</span>.
+                </p>
+                <p class="mt-4">
+                    Le financement de ces projets est permis grâce à nos <span class="font-bold">sponsors</span>, aux <span class="font-bold">dons</span> que nous recevons mais également grâce aux 
+                    <span class="font-bold">évènements caritatifs et solidaires</span> que nous organisons avec nos nombreux adhérents tout au long de l'année. Ces derniers permettent de créer un véritable lien entre les étudiants bénévoles.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <!-- Bandeau séparateur avec image -->
+    <section id="bandeau" class="w-full h-96 bg-cover bg-center" style="background-image: url('./assets/bandeau.jpg');"></section>
+
+
+
+    <!-- Histoire Logo -->
+    <section id="logo" class="py-16 bg-gray-100">
+        <h2 class="text-3xl font-bold mb-12 text-center text-gray-700 w-4/5 px-5 mx-auto">Notre logo a une histoire</h2>
+        <div class="container mx-auto flex flex-wrap justify-center items-center px-8 w-full md:w-4/5 text-justify text-gray-700">
+            <div class="w-full text-justify mb-8">
+                <p class="text-lg mb-16">
+                    En 2022, grâce à la talentueuse graphiste <a class="italic" href="https://www.behance.net/paulinelab435d">Pauline Laboria</a>, nous avons pu donner naissance à un logo, 
+                    reflétant au mieux notre association.
+                    Au centre, vous pouvez y retrouver <span class="font-bold text-gray-700">six mains</span> de couleurs différentes, symboles de l’<span class="font-bold text-gray-700">entraide</span>, 
+                    de l’<span class="font-bold text-gray-700">union</span> et du <span class="font-bold text-gray-700">partage</span>. Aujourd’hui c’est grâce à l’ensemble de ses membres qu’UN ETAI peut espérer voir ses 
+                    projets naître un jour.
+                </p>
+
+                <div class="flex flex-col xl:flex-row justify-between w-full align-top">
+                    <div class="flex flex-col w-full xl:w-1/3 text-justify mb-8 xl:mb-0">
+                        <p class="text-lg mb-8">
+                            Les six mains illustrent les <span class="font-bold">six continents</span> (Amérique, Europe, Asie, Antarctique, Océanie et Afrique) car 
+                            nous aimerions à l'avenir ouvrir des missions dans le plus d’endroits possibles où la situation y est critique. 
+                        </p>
+                        <p class="text-lg mb-8">
+                            Les <span class="font-bold text-gray-700">six couleurs</span> différentes évoquent l’aide multiculturelle : dans UN ETAI, toutes les religions et ethnies 
+                            se rencontrent. Par ailleurs, chaque couleur dévoile une facette de notre association.
+                        </p>
+                        <p class="text-lg"> 
+                            Enfin, notre association célèbre son premier slogan “<span class="font-bold text-gray-700">Un ETAI, unis pour s’entraider</span>”. 
+                        </p>
+                    </div>
+
+                    <div class="w-full xl:w-3/5 my-auto flex justify-center mt-8 xl:my-auto">
+                        <img src="./assets/UNETAIAPROPOS.png" alt="Logo UN ETAI" class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Nos Actions -->
+    <section id="actions" class="bg-gray-50 py-16 flex justify-center">
+        <div class="container mx-auto px-8 w-full md:w-4/5">
+            <h2 class="text-3xl text-gray-700 font-bold text-center mb-12 w-4/5 px-5 mx-auto">Nos Actions</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-16">
+                <!-- Rectangle 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-customGreen flex flex-col items-center text-justify">
+                    <div class="mb-4 text-customGreen text-4xl">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-gray-700">Être au contact des<br>populations</h3>
+                    <p class="text-gray-600">Chacune de nos missions est avant tout fondée sur l’échange, la rencontre entre notre culture française et leur culture. Les bénévoles créent des liens et apprennent à découvrir de nouvelles cultures.</p>
+                    <p class="text-gray-600 mt-4">C’est une véritable expérience, qui permet de nous interroger ainsi que de porter un regard nouveau face à la société d’aujourd’hui. Les missions apportent un enrichissement personnel sur le plan émotionnel mais aussi professionnel.</p>
+                </div>
+
+                <!-- Rectangle 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-customGreen flex flex-col items-center text-justify">
+                    <div class="mb-4 text-customGreen text-4xl">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-gray-700">Participer à l'éducation de<br>la population</h3>
+                    <p class="text-gray-600">En tant qu’étudiants en médecine, nous souhaitons participer à l’éducation des enfants par différents moyens, notamment en contribuant à la construction d’écoles, en mettant en place des actions de prévention sanitaire.</p>
+                    <p class="text-gray-600 mt-4">De plus nous essayons de sensibiliser les habitants en faisant de la prévention sanitaire (IST, hygiène intime, maladies courantes) tout en leur distribuant des produits hygiéniques.</p>
+                </div>
+
+                <!-- Rectangle 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-customGreen flex flex-col items-center text-justify">
+                    <div class="mb-4 text-customGreen text-4xl">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-gray-700">Actions dans les établissements<br>scolaires</h3>
+                    <p class="text-gray-600">Dans les établissements scolaires, nous initions un maximum de jeunes aux gestes de premiers secours afin qu'ils puissent réagir efficacement en cas d'urgence.</p>
+                    <p class="text-gray-600 mt-4">Par ailleurs, nous participons activement à la vie du dispensaire en assistant aux consultations, en réalisant des soins courants et en accompagnant les campagnes de vaccination et de suivi en maternité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- Sponsors -->
+    <section id="sponsors" class="bg-white text-gray-700 py-16 flex justify-center">
+        <div class="container mx-auto px-8 w-full md:w-4/5">
+            <h2 class="text-3xl font-bold text-center mb-12 w-4/5 px-5 mx-auto">Nos Sponsors</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/cerballiance.png" alt="Sponsor Cerballiance" class="h-full w-auto object-contain">
+                </div>
+    
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/cours-esquirol.png" alt="Sponsor Esquirol" class="h-full w-auto object-contain">
+                </div>
+    
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/crous.png" alt="Sponsor Crous" class="h-full w-auto object-contain">
+                </div>
+    
+                <div class="flex items-center justify-center h-36 w-36 mx-auto">
+                    <img src="./assets/logos/cvec.png" alt="Sponsor CVEC" class="h-full w-auto object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="mx-auto w-full p-16 py-16">
+            <div class="flex flex-col xl:flex-row xl:gap-96 justify-center mx-auto items-center gap-16">
+                <!-- Logo, Nom et Description -->
+                <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-8">
+                    <img src="./assets/logos/unetai.png" alt="Logo Un'Etai" class="h-20">
+                    <div class="flex text-center flex-col flex-wrap md:text-left">
+                        <span class="text-2xl font-semibold text-gray-700">Un'Etai</span>
+                        <p class="mt-2 text-sm text-gray-500 max-w-64">Agissons ensemble pour une médecine plus humaine.</p>
+                    </div>
+                </div>
+    
+                <!-- Liens Utiles et Moyens de Contact -->
+                <div class="flex flex-col md:flex-row justify-center text-center md:text-left gap-8 md:gap-32">
+                    <!-- Liens Utiles -->
+                    <div class="w-full">
+                        <h2 class="mb-6 text-sm font-semibold text-gray-700 uppercase">Liens Utiles</h2>
+                        <ul class="text-gray-500 font-medium">
+                            <li class="mb-4">
+                                <a href="runetai.html" class="hover:text-customGreen">R'un Etai</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="missions.html" class="hover:text-customGreen">Nos missions</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="contact.html" class="hover:text-customGreen">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Moyens de Contact -->
+                    <div class="w-full">
+                        <h2 class="mb-6 text-sm font-semibold text-gray-700 uppercase">Contactez-Nous</h2>
+                        <ul class="text-gray-500 font-medium flex flex-col items-center justify-center md:items-start">
+                            <li class="mb-4 flex items-center space-x-2 group">
+                                <i class="fas fa-envelope text-gray-500 group-hover:text-customGreen group-hover:cursor-pointer"></i>
+                                <a href="mailto:un.etai05@gmail.com" class="group-hover:text-customGreen">un.etai05@gmail.com</a>
+                            </li>
+                            <li class="mb-4 flex items-center space-x-2 group">
+                                <i class="fab fa-instagram text-gray-500 group-hover:text-customGreen group-hover:cursor-pointer"></i>
+                                <a href="https://www.instagram.com/1_etai/" target="_blank" class="group-hover:text-customGreen">@1_etai</a>
+                            </li>
+                            <li class="flex items-center space-x-2 group">
+                                <i class="fab fa-tiktok text-gray-500 group-hover:text-customGreen group-hover:cursor-pointer"></i>
+                                <a href="https://www.tiktok.com/@1.etai" target="_blank" class="group-hover:text-customGreen">@1.etai</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="text-center mt-12">
+                <span class="text-sm text-gray-500">&copy; 2025 Un'Etai. Tous droits réservés.</span>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
